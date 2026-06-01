@@ -1,0 +1,20 @@
+[project]
+name = "crewcode"
+version = "2.0.0"
+description = "Hierarchical multi‑agent bug hunting system"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph>=0.2.0",
+    "langchain-ollama>=0.1.0",
+    "langchain-groq>=0.1.0",
+    "langchain-google-genai>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+crewcode = "cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["agents*", "cli*", "config*", "db*", "orchestrator*", "tools*"]
